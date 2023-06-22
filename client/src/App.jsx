@@ -11,7 +11,12 @@ function App() {
   useEffect(() => {
     async function getData() {
       try {
-        const {data: response} = await axios.get('http://127.0.0.1:8080/api/schools');
+        const {data: response} = await axios.get(
+          'https://getlistschoolpantchanit-xhceranm2a-uc.a.run.app',
+          {Headers: {
+            'Access-Control-Allow-Origin' : '*',
+          }}
+        );
         setData(response);
         setLoading(false)
       } catch (error) {
